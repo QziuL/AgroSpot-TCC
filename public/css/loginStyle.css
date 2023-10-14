@@ -1,0 +1,100 @@
+* {
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #000;
+}
+
+.background {
+    width: 105%;
+    height: 105%;
+    display: block;
+    position: absolute;
+    left: -5%;
+    top: -5%;
+    background-image: url(../images/fundo\ tela\ login.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+    z-index: -1;
+}
+
+#div-login h1, 
+#div-cadastro {
+    text-align: center;
+}
+
+#div-login {
+    /* font-family: 'Inter', Helvetica; */
+    font-family: Helvetica;
+    /* font-weight: bold; */
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+#div-login input:focus {
+    outline: none;
+}
+
+#div-login a {
+    font-size: .9rem;
+}
+
+#div-login a:hover {
+    color: #908410;
+}
+
+label, input {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 2px;
+}
+
+input {
+    padding: 10px;
+    border-bottom: 2px solid rgb(31, 29, 29);
+    margin-bottom: 20px;
+}
+
+input:focus {
+    border-bottom: 2px solid #908410;
+}
+
+input[type="submit"] {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    color: #ffffff;
+    background-color: #908410;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #71670E;
+    transition: .5s;
+}
+
+#div-cadastro p {
+    margin-bottom: 10px;
+}
