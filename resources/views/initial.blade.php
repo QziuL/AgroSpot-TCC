@@ -6,7 +6,7 @@
     <a href="" id="navbar-logo">Logo</a>
     <div id="navbar-menu">
         <ul>
-            <li><a href="" id="menu-login">Login</a></li>
+            <li><a href="/login" id="menu-login">Login</a></li>
             <li class="menu-opcoes-dropdown">
                 <a id="menu-opcoes">
                     Opções

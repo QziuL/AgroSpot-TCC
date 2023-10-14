@@ -22,6 +22,8 @@ main {
     background-color: lightgray 50%;
 }
 
+/* == Rodapé da página == */
+
 footer{
     background: var(--verde, #71670E);
     width: 100%;
@@ -30,6 +32,8 @@ footer{
     bottom: 0;
     text-align: right;
 }
+
+/* == Barra de navegação == */
 
 #navbar {
     background: var(--verde, #71670E);
