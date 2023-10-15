@@ -17,7 +17,7 @@
             <form action="">
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email" placeholder="Digite seu e-mail...">
-                <label for="email">Senha</label>
+                <label for="password">Senha</label>
                 <input type="password" name="password" id="password" placeholder="Digite sua senha...">
                 <input type="submit" value="Login" id="input-login">
             </form>

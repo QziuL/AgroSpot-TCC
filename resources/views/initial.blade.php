@@ -16,7 +16,7 @@
                     
                 </a>
                 <div class="menu-opcoes-dropdown-content">
-                    <a href="">Cadastrar</a>
+                    <a href="/register">Cadastrar</a>
                     <a href="">Vincular perfil a uma feira</a>
                     <a href="">Ver mapa</a>
                 </div>
