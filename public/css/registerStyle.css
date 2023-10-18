@@ -27,7 +27,7 @@
 
 #div-form {
     width: 700px;
-    height: 486px;
+    height: 500px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10vh;
@@ -38,6 +38,10 @@
     font-family: 'Inter', sans-serif;
 }
 
+#div-form input:focus {
+    outline: none;
+}
+
 .form-control {
     font-size: 15px;
     font-weight: bold;
@@ -45,6 +49,7 @@
     display: grid;
     grid-template-columns: 1em auto;
     gap: 0.5em;
+    margin-top: auto !important;
   }
 
 label, input {

@@ -15,26 +15,29 @@
 <body>
     <div class="background"></div>
     <div id="div-form">
-        <form action="" id="div-form-content">
-            
+        <h1>Cadastro</h1>
+        <form action="{{ route('register.store') }}" id="div-form-content" method="POST">
+            @csrf()
             <div id="div-form-user-comum">
                 <label for="nome" >Nome</label >
-                <input type="text" name="nome" placeholder="digite seu nome..." required>
+                <input type="text" name="nome" placeholder="Digite seu nome..." required>
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email" placeholder="Digite seu e-mail..." required>
                 <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" name="phone" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" placeholder="Digite seu telefone..." required>
+                <input type="tel" id="telefone" name="phone" pattern="\([0-9]{2})\[0-9]{4,5}[0-9]{4}" placeholder="(DDD) 123451234" required>
                 <label for="password">Senha</label>
                 <input type="password" name="password" id="password" placeholder="Digite sua senha..." required>
                 <input type="password" name="password" id="confirm_password" placeholder="Confirme sua senha" required>
                     
-                <label class="form-control">
-                    <input type="radio" name="radio" />Agricultor
-                </label>
-    
-                <label class="form-control">
-                    <input type="radio" name="radio" />Usuário
-                </label>
+                <div id="div-radio-buttons">
+                    <label class="form-control">
+                        <input type="radio" name="radio" required/>Usuário
+                    </label>
+                    
+                    <label class="form-control">
+                        <input type="radio" name="radio" required/>Agricultor
+                    </label>                   
+                </div>
             </div>
 
             <div id="div-form-user-agricultor">
