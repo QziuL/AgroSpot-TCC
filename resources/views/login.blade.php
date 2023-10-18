@@ -24,7 +24,7 @@
         </div>
         <div id="div-cadastro">
             <p>Não tem cadastro?</p>
-            <a href="#">Cadastrar</a>
+            <a href="{{ route('register.view') }}">Cadastrar</a>
         </div>
     </div>
 </body>
