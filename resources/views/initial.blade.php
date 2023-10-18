@@ -6,7 +6,7 @@
     <a href="" id="navbar-logo">Logo</a>
     <div id="navbar-menu">
         <ul>
-            <li><a href="/login" id="menu-login">Login</a></li>
+            <li><a href="{{ route('login.view') }}" id="menu-login">Login</a></li>
             <li class="menu-opcoes-dropdown">
                 <a id="menu-opcoes">
                     Opções
@@ -16,7 +16,7 @@
                     
                 </a>
                 <div class="menu-opcoes-dropdown-content">
-                    <a href="/register">Cadastrar</a>
+                    <a href="{{ route('register.view') }}">Cadastrar</a>
                     <a href="">Vincular perfil a uma feira</a>
                     <a href="">Ver mapa</a>
                 </div>
