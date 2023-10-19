@@ -27,15 +27,15 @@
                 <input type="tel" id="telefone" name="phone" pattern="\([0-9]{2})\[0-9]{4,5}[0-9]{4}" placeholder="(DDD) 123451234" required>
                 <label for="password">Senha</label>
                 <input type="password" name="password" id="password" placeholder="Digite sua senha..." required>
-                <input type="password" name="password" id="confirm_password" placeholder="Confirme sua senha" required>
+                {{-- <input type="password" name="password" id="confirm_password" placeholder="Confirme sua senha" required> --}}
                     
                 <div id="div-radio-buttons">
                     <label class="form-control">
-                        <input type="radio" name="radio" required/>Usuário
+                        <input type="radio" name="button_radio" value="user_comum" required/>Usuário
                     </label>
                     
                     <label class="form-control">
-                        <input type="radio" name="radio" required/>Agricultor
+                        <input type="radio" name="button_radio" value="user_agricultor" required/>Agricultor
                     </label>                   
                 </div>
             </div>
