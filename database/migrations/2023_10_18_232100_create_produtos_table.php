@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nome');
             $table->text('descricao');
             $table->string('codigo', 8);
-            $table->binary('disponibilidade');
+            $table->boolean('disponibilidade');
             $table->timestamps();
         });
     }
