@@ -12,6 +12,22 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    // =======================================================
+    // DEFININDO CONSTANTES PARA REFERENCIAR OS DADOS DO BANCO
+    public const TABELA_USER = "users";
+
+    //public const CAMPO_DELETED_AT = "deleted_at";
+    public const CAMPO_CREATED_AT = "created_at";
+    public const CAMPO_UPDATED_AT = "updated_at";
+
+    public const CAMPO_ID = "id";
+    public const CAMPO_NOME = "name";
+    public const CAMPO_PHONE = "phone";
+    public const CAMPO_EMAIL = "email";
+    public const CAMPO_PASSWORD = "password";
+    public const CAMPO_EMAIL_VERIFICADO = "email_verified_at";
+    // =======================================================
+
     /**
      * The attributes that are mass assignable.
      *
@@ -43,4 +59,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    
 }
