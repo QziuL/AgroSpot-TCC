@@ -12,4 +12,4 @@ Route::get('/login', [EventController::class, 'viewLogin'])->name('login.view');
 Route::get('/register', [RegisterController::class, 'viewRegister'])->name('register.view');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
-Route::get('/produtos', [ProdutoController::class, 'index'])->name('produtos.index');
+Route::get('/produtos', [ProdutoController::class, 'index'])->name('produtos.index')->middleware('auth');
