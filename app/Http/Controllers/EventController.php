@@ -10,8 +10,4 @@ class EventController extends Controller
     public function viewIndex() {
         return view('initial');
     }
-
-    public function viewLogin() {
-        return view('login');
-    }
 }
