@@ -6,7 +6,19 @@
     <a href="" id="navbar-logo">Logo</a>
     <div id="navbar-menu">
         <ul>
-            <li><a href="{{ route('login.view') }}" id="menu-login">Login</a></li>
+            @guest
+            <li><a href="{{ route('login.view') }}" id="menu-login" class="menu-button">Login</a></li>
+            @endguest
+            @auth
+            <li>
+                <form action="{{ route('login.logout') }}" method="POST">
+                    @csrf
+                    <a href="{{ route('login.logout') }}" class="menu-button" id="menu-sair" onclick="event.preventDefault(); this.closest('form').submit();">
+                        Sair
+                    </a>
+                </form>
+            </li>
+            @endauth
             <li class="menu-opcoes-dropdown">
                 <a id="menu-opcoes">
                     Opções
