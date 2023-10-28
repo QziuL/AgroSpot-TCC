@@ -38,19 +38,14 @@
     font-family: 'Inter', sans-serif;
 }
 
+#div-form #div-form-content {
+    width: 100%;
+    text-align: center;
+}
+
 #div-form input:focus {
     outline: none;
 }
-
-.form-control {
-    font-size: 15px;
-    font-weight: bold;
-    line-height: 1.1;
-    display: grid;
-    grid-template-columns: 1em auto;
-    gap: 0.5em;
-    margin-top: auto !important;
-  }
 
 label, input {
     display: block;
@@ -68,7 +63,7 @@ input {
     width: 250px;
     padding: 10px;
     border-radius: 15px; 
-    margin-bottom: 20px;  
+    /* margin-bottom: 20px;   */
 }
 
 #div-form-user-comum, #div-form-user-agricultor {
@@ -78,15 +73,34 @@ input {
 #div-form-user-comum {
     margin-right: 50px;
 }
- /* #input-register{
+
+/* 
+#input-register{
     width: 112px;
     height: 39px;
- } */
+} 
+*/
 
+#div-form-user-comum #div-radio-buttons {
+    margin-top: 20px;
+    width: 150px;
+}
+
+.form-control {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    /* gap: 0.5em; */
+}
+
+
+/* == Input button == */
 .button {
-    position: relative;
     background-color: #04AA6D;
     border: none;
+    position: relative;   
     font-size: 15px;
     color: #FFFFFF;
     padding: 5px;
@@ -97,6 +111,7 @@ input {
     text-decoration: none;
     overflow: hidden;
     cursor: pointer;
+    
 }
 
 .button:after {

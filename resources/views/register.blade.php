@@ -29,32 +29,51 @@
                 <input type="password" name="password" id="password" placeholder="Digite sua senha..." required>
                 {{-- <input type="password" name="password" id="confirm_password" placeholder="Confirme sua senha" required> --}}
                     
+                
                 <div id="div-radio-buttons">
+                    <h3>Tipo de perfil:</h3>
                     <label class="form-control">
-                        <input type="radio" name="button_radio" value="user_comum" required/>Usuário
+                        <input id="radio-user" type="radio" name="button_radio" value="user_comum" onClick="check()" required/>Usuário
                     </label>
                     
                     <label class="form-control">
-                        <input type="radio" name="button_radio" value="user_agricultor" required/>Agricultor
+                        <input id="radio-agricultor" type="radio" name="button_radio" value="user_agricultor" onClick="check()" required/>Agricultor
                     </label>                   
                 </div>
             </div>
 
             <div id="div-form-user-agricultor">
                 <label for="cpf" disabled >CPF</label >
-                    <input type="text" name="cpf" placeholder="Digite seu CPF" @disabled(true) required>
-                    <label for="cep">CEP</label>
-                    <input type="text" name="cep" id="cep" placeholder="Digite seu CEP" @disabled(true) required>
-                    <label for="city">Cidade</label>
-                    <input type="text" id="city" name="city" placeholder="Nome da cidade"  @disabled(true) required>
-                    <label for="nomePropriedade" >Nome da propriedade</label>
-                    <input type="text" name="nomePropriedade" placeholder="Propriedade..." @disabled(true) required>                   
+                <input id="cpf" type="text" name="cpf" placeholder="Digite seu CPF"  @disabled(true) required>
+                <label for="cep">CEP</label>
+                <input id="cep" type="text" name="cep" id="cep" placeholder="Digite seu CEP" @disabled(true) required>
+                <label for="city">Cidade</label>
+                <input id="city" type="text" id="city" name="city" placeholder="Nome da cidade"  @disabled(true) required>
+                <label for="nomePropriedade" >Nome da propriedade</label>
+                <input id="nomePropriedade" type="text" name="nomePropriedade" placeholder="Propriedade..." @disabled(true) required>                   
             </div>
 
-            <input type="submit" value="Cadastrar" id="input-register"
-            class ="button">
+            <input type="submit" value="Cadastrar" id="input-register" class ="button">
         </form>
 
     </div>
+    <script>
+        function check(){
+            if(document.getElementById('radio-agricultor').checked == true)
+            {
+                document.getElementById('cpf').disabled = false;
+                document.getElementById('cep').disabled = false;
+                document.getElementById('city').disabled = false;
+                document.getElementById('nomePropriedade').disabled = false;
+            } 
+            else
+            {
+                document.getElementById('cpf').disabled = true;
+                document.getElementById('cep').disabled = true;
+                document.getElementById('city').disabled = true;
+                document.getElementById('nomePropriedade').disabled = true;
+            }
+        }
+    </script>
 </body>
 </html>
