@@ -61,56 +61,105 @@ footer{
     font-size: 18px;
     font-style: normal;
     font-weight: bold;
-    line-height: 150%; /* 15px */
-    
+    /* line-height: 150%; 15px */
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+}
+
+#navbar-menu #menu-login {
+    width: 70%;
+    text-align: center;
 }
 
 /* == Menu de opcoes no Navbar == */
-
-.menu-opcoes-dropdown:hover .menu-opcoes-dropdown-content{
-    display: block;
-    position: absolute;
-    
-    background-color: #908410;
-    border-radius: 10px;
-
-    height: 120px;
-    width: 250px;
-
-    text-align: center;
-
-    margin: 10px 0 0 10px;
-    z-index: 1;
-}
-
-.menu-opcoes-dropdown-content  {
-    display: none;
-    position: absolute; 
-}
-
-.menu-opcoes-dropdown-content a {
-    display: block;
-    font-size: 15px !important;
-    margin-top: 5px !important;
-    padding: 5px 0;
-}
-
-.menu-opcoes-dropdown-content a:hover {
-    background-color: #71670E;
-    border-radius: 5px;
-}
-
 .menu-button {
-    padding: 10px;
+    padding: 10px 10px;
 }
 
 .menu-button:hover {
     background-color: #adb893;
     border-radius: 3px;
+    transition: 0.2s;
 }
 
-/* == Frase do meio == */
+.menu-opcoes-dropdown {
+    position: relative;
+    width: 110px;
+}
 
+/* 
+    aquela parada que fica do lado de "opções"
+    (ela se mexe quando clica) 
+*/
+.menu-opcoes-dropdown::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    width: 13px;
+    height: 2px;
+    background-color: #fffefe;
+    z-index: 10;
+    transform: rotate(40deg);
+    transition: 0.3s;
+}
+
+.menu-opcoes-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -8px;
+    width: 13px;
+    height: 2px;
+    background-color: #fffefe;
+    z-index: 10;
+    transform: rotate(-40deg);
+    transition: 0.3s;
+}
+
+.menu-opcoes-dropdown.active::before {
+    right: -8px;
+}
+
+.menu-opcoes-dropdown.active::after {
+    right: 0px;
+}
+
+/* == Menu dropdown == */
+.menu-opcoes-dropdown .content  {
+    width: 200%;
+    top: 50px;
+    left: 10px;
+    position: absolute;
+    background-color: #908410;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    z-index: 1;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    text-align: left;
+}
+
+.menu-opcoes-dropdown.active .content {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu-opcoes-dropdown .content div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu-opcoes-dropdown .content div:hover {
+    background-color: #adb893;
+    transition: 0.2s;
+}
+
+
+/* == Frase do meio == */
 #frase-efeito{
     color: #FFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
