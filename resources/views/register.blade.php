@@ -19,12 +19,12 @@
         <form action="{{ route('register.store') }}" id="div-form-content" method="POST">
             @csrf()
             <div id="div-form-user-comum">
-                <label for="nome" >Nome</label >
-                <input type="text" name="nome" placeholder="Digite seu nome..." required>
+                <label for="name" >Nome</label >
+                <input type="text" name="name" id="name" placeholder="Digite seu nome..." required>
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email" placeholder="Digite seu e-mail..." required>
-                <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" name="phone" pattern="\([0-9]{2})\[0-9]{4,5}[0-9]{4}" placeholder="(DDD) 123451234" required>
+                <label for="phone">Telefone</label>
+                <input type="tel" id="phone" name="phone"  placeholder="(xx) 123456789" required> <!-- pattern="\([0-9]{2})\[0-9]{4,5}[0-9]{4}" -->
                 <label for="password">Senha</label>
                 <input type="password" name="password" id="password" placeholder="Digite sua senha..." required>
                 {{-- <input type="password" name="password" id="confirm_password" placeholder="Confirme sua senha" required> --}}
@@ -33,11 +33,11 @@
                 <div id="div-radio-buttons">
                     <h3>Tipo de perfil:</h3>
                     <label class="form-control">
-                        <input id="radio-user" type="radio" name="button_radio" value="user_comum" onClick="check()" required/>Usuário
+                        <input id="radio-user" type="radio" name="button_radio" value="0" onClick="check()" required/>Usuário
                     </label>
                     
                     <label class="form-control">
-                        <input id="radio-agricultor" type="radio" name="button_radio" value="user_agricultor" onClick="check()" required/>Agricultor
+                        <input id="radio-agricultor" type="radio" name="button_radio" value="1" onClick="check()" required/>Agricultor
                     </label>                   
                 </div>
             </div>
