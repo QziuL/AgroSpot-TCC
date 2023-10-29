@@ -26,7 +26,7 @@ class LoginController extends Controller
  
             return redirect()->intended();      // O 'INTENDED' REDIRECIONA PARA A PÁGINA DESEJADA OU PARA A TELA INICIAL
         } else {
-            return redirect('/')->withErrors('Erro ao logar!!');
+            return redirect()->route('index')->withErrors('Erro ao logar!!');
 
             // return back()->withErrors([
             //     'email' => 'The provided credentials do not match our records.',
@@ -42,6 +42,6 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         
-        return redirect('/');
+        return redirect()->route('index');
     }
 }
