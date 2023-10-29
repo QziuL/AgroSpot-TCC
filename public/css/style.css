@@ -53,7 +53,7 @@ footer{
     padding: 0 10px;
 }
 
-#navbar-menu a {
+#navbar-menu .menu-button {
     margin: 0 10px;
     text-decoration: none;
     font-family: 'Inter', sans-serif;
@@ -67,6 +67,21 @@ footer{
     width: 100%;
 }
 
+#navbar-menu .content div {
+    padding: 0 10px;
+}
+
+#navbar-menu .menu-opcoes-dropdown .content a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0;
+    font-family: 'Inter', sans-serif;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
 #navbar-menu #menu-login {
     width: 70%;
     text-align: center;
