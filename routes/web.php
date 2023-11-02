@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,4 +15,4 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('login.logout')
 Route::get('/register', [RegisterController::class, 'viewRegister'])->name('register.view');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
-Route::get('/produtos', [ProdutoController::class, 'index'])->name('produtos.index')->middleware('auth');
+Route::get('/index', [IndexController::class, 'show'])->name('produtos.index')->middleware('auth');
