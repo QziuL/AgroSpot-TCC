@@ -3,9 +3,10 @@
 @section('title', 'AgroSpot')
 
 @section('nav')
-    <a href="" id="navbar-logo">Logo</a>
     <div id="navbar-menu">
+        <a href="" id="navbar-logo"><img src="/images/editado-removebg-preview.png" alt="Logomarca AgroSpot"></a>
         <ul>
+            
             @guest
             <li><a href="{{ route('login.view') }}" id="menu-login" class="menu-button">Login</a></li>
             @endguest

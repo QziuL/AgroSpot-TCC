@@ -41,8 +41,15 @@ footer{
     height: 10%;
     display: inline-block;
 }
+
+#navbar-logo img {
+    width: 5em;
+    float: left;
+    padding-left: 4em;
+}
   
 #navbar-menu ul { 
+    
     display: flex;
     justify-content: flex-end;
     list-style: none;
@@ -50,6 +57,7 @@ footer{
 }
 
 #navbar-menu ul li {
+    margin-top: 18px;
     padding: 0 10px;
 }
 
