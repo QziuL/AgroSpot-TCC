@@ -42,5 +42,8 @@
 @endsection
 
 @section('content')
+    <div class="div-recent-products">
+        <h3>Adicionados Recentemente</h3>
+    </div>
     <p id="frase-efeito">Conecte-se ao <span>campo</span>, transforme sua <span>alimentação</span>.</p>
 @endsection
