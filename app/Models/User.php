@@ -60,7 +60,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    // public function agricultores() {
-    //     return $this->hasMany(Agricultor::class);
-    // }    
+    public function agricultor() {
+        return $this->hasOne(Agricultor::class);
+    }    
 }

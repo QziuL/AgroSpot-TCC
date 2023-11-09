@@ -62,7 +62,7 @@ class Agricultor extends Model
 
     //protected $primaryKey = 'cpf';
 
-    // public function user() {
-    //     return $this->belongsTo(User::class);
-    // }
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
