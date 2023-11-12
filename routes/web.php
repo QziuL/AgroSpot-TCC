@@ -8,11 +8,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [EventController::class, 'viewIndex'])->name('index');
 
-Route::get('/login', [LoginController::class, 'index'])->name('login.view');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login/auth', [LoginController::class, 'auth'])->name('login.auth');
 Route::post('/logout', [LoginController::class, 'logout'])->name('login.logout');
 
-Route::get('/register', [RegisterController::class, 'viewRegister'])->name('register.view');
+Route::get('/register', [RegisterController::class, 'viewRegister'])->name('register');
+Route::get('/register/agricultor', [RegisterController::class, 'viewRegisterAgricultor'])->name('register.agricultor');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+Route::post('/register/agricultor', [RegisterController::class, 'storeAgricultor'])->name('register.storeAgricultor');
 
-Route::get('/index', [IndexController::class, 'show'])->name('produtos.index')->middleware('auth');
+Route::get('/index', [IndexController::class, 'show'])->name('produtos')->middleware('auth');
