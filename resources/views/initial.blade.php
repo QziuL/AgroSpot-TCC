@@ -8,7 +8,7 @@
         <ul>
             
             @guest
-            <li><a href="{{ route('login.view') }}" id="menu-login" class="menu-button">Login</a></li>
+            <li><a href="{{ route('login') }}" id="menu-login" class="menu-button">Login</a></li>
             @endguest
 
             @auth
@@ -27,7 +27,7 @@
                     <a class="menu-button">Opções</a>
 
                     <div class="content">
-                        <div><a href="{{ route('register.view') }}">Cadastrar</a></div>
+                        <div><a href="{{ route('register') }}">Cadastrar</a></div>
                         <div><a href="">Vincular perfil a uma feira</a></div>
                         <div><a href="">Ver mapa</a></div>
                     </div>
@@ -42,8 +42,35 @@
 @endsection
 
 @section('content')
-    <div class="div-recent-products">
-        <h3>Adicionados Recentemente</h3>
+    <div id="div-content-main">
+        <div class="div-recent-products">
+            <h3>Adicionados recentemente</h3>
+            @foreach ($produtosRecentes as $produto)
+                <div class="div-content-produtosRecentes">
+                    <div class="div-left-content-produtosRecentes">
+                        <p>{{ $produto->nome }}</p>
+                        @if (($produto->disponibilidade)==1)
+                            <span class="span-produto-disponivel">Produto disponível</span>
+                        @endif
+
+                        {{-- 
+                            MUDAR ISSO FUTURAMENTE,
+                            A IMAGEM SERÁ DIRETA DA TABELA DO BANCO
+                        --}}
+                        @if (($produto->nome)=='TOMATE')
+                        <div id="div-produtosRecentes-img">
+                            <img src="https://static.vecteezy.com/system/resources/previews/013/442/147/non_2x/tomatoes-on-a-transparent-background-free-png.png">
+                        </div>
+                        @endif
+                    </div>
+
+                    <a href="{{ route('produtos') }}"><input class="bt-recenteProduto-saibaMais" type="button" value="Saiba mais..."></a>
+                    <span class="clear-float"></span>
+                </div>
+            @endforeach
+        </div>
+        <div class="div-content-frase">
+            <p id="frase-efeito">Conecte-se ao <span>campo</span>, transforme sua <span>alimentação</span>.</p>
+        </div>
     </div>
-    <p id="frase-efeito">Conecte-se ao <span>campo</span>, transforme sua <span>alimentação</span>.</p>
 @endsection
