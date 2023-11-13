@@ -57,11 +57,9 @@
                             MUDAR ISSO FUTURAMENTE,
                             A IMAGEM SERÁ DIRETA DA TABELA DO BANCO
                         --}}
-                        @if (($produto->nome)=='TOMATE')
                         <div id="div-produtosRecentes-img">
-                            <img src="https://static.vecteezy.com/system/resources/previews/013/442/147/non_2x/tomatoes-on-a-transparent-background-free-png.png">
+                            <img src="/img/produtos/{{ $produto->image }}">
                         </div>
-                        @endif
                     </div>
 
                     <a href="{{ route('produtos') }}"><input class="bt-recenteProduto-saibaMais" type="button" value="Saiba mais..."></a>
