@@ -13,4 +13,10 @@ class IndexController extends Controller
 
         return view('index', ['produtos' => $produtos]);
     }
+
+    public function viewInitial() {
+        $produtosRecentes = Produto::orderBy('created_at', 'DESC')->take(3)->get();
+
+        return view('initial', ['produtosRecentes' => $produtosRecentes]);
+    }
 }
