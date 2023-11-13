@@ -20,4 +20,5 @@ class Produto extends Model
     public const CAMPO_DESCRICAO = "descricao";
     public const CAMPO_CODIGO = "codigo";
     public const CAMPO_DISPONIBILIDADE = "disponibilidade";
+    public const CAMPO_IMAGE = "image";
 }
