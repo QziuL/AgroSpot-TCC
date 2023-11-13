@@ -40,39 +40,44 @@
 
 #div-form #div-form-content {
     width: 100%;
-    text-align: center;
 }
+
+.label-form {
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 2px;
+    margin-top: 10px;
+    display: block;
+}
+
+.input-form {
+    width: 250px;
+    padding: 10px;
+    border-radius: 15px; 
+    display: block;
+    /* margin-bottom: 20px;   */
+}
+
+
 
 #div-form input:focus {
     outline: none;
 }
 
-label, input {
+/* #div-form-user-comum label, input {
     display: block;
     text-align: left;
-}
+} */
 
-label {
-    font-size: 12px;
-    font-weight: bold;
-    padding: 2px;
-    margin-top: 10px;
-}
 
-input {
-    width: 250px;
-    padding: 10px;
-    border-radius: 15px; 
-    /* margin-bottom: 20px;   */
-}
 
-#div-form-user-comum, #div-form-user-agricultor {
+/* #div-form-user-comum, #div-form-user-agricultor {
     float: left;
-}
+} */
 
-#div-form-user-comum {
+/* #div-form-user-comum {
     margin-right: 50px;
-}
+} */
 
 /* 
 #input-register{
@@ -81,19 +86,19 @@ input {
 } 
 */
 
-#div-form-user-comum #div-radio-buttons {
+/* #div-form-user-comum #div-radio-buttons {
     margin-top: 20px;
     width: 150px;
-}
+} */
 
-.form-control {
+/* .form-control {
     font-size: 15px;
     font-weight: bold;
     line-height: 1.1;
     display: grid;
     grid-template-columns: 1em auto;
-    /* gap: 0.5em; */
-}
+    /* gap: 0.5em; 
+} */
 
 
 /* == Input button == */
