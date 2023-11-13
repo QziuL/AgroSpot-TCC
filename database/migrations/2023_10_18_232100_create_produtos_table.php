@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('descricao');
             $table->string('codigo', 8);
             $table->boolean('disponibilidade');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
