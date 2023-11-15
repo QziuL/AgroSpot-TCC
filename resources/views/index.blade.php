@@ -3,14 +3,10 @@
 @section('title', 'AgroSpot')
 
 @section('content')
-    <h1>Listagem de Produtos</h1>    
-
-    @foreach ($produtos as $produto)
-        <p> 
-            {{ $produto->nome }} -- {{ $produto->descricao }} -- 
-            @if ( $produto->disponibilidade == 1 )
-                Disponivel ( {{ $produto->disponibilidade }} )
-            @endif
-        </p>
-    @endforeach
+    <div>
+        <h3>Barra lateral</h3>
+    </div>
+    <div>
+        <h3>Conteúdo principal</h3>
+    </div>
 @endsection
