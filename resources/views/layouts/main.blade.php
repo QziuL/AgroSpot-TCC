@@ -16,8 +16,47 @@
     <title>@yield('title')</title>
 </head>
 <body>
-
-    <nav id="navbar">@yield('nav')</nav>
+    <nav id="navbar">
+        <div id="navbar-menu">
+            <a href="" id="navbar-logo"><img src="/images/editado-removebg-preview.png" alt="Logomarca AgroSpot"></a>
+            <ul>
+                
+                @guest
+                <li><a href="{{ route('login') }}" id="menu-login" class="menu-button">Login</a></li>
+                @endguest
+    
+                @auth
+                <li>
+                    <form action="{{ route('login.logout') }}" method="POST">
+                        @csrf
+                        <a href="{{ route('login.logout') }}" class="menu-button" id="menu-sair" onclick="event.preventDefault(); this.closest('form').submit();">
+                            Sair
+                        </a>
+                    </form>
+                </li>
+                @endauth
+    
+                <li>
+                    <div class="menu-opcoes-dropdown">
+                        <a class="menu-button">Opções</a>
+    
+                        <div class="content">
+                            @guest
+                            <div><a href="{{ route('register') }}">Cadastrar</a></div>
+                            @endguest
+                            <div><a href="{{ route('produtos') }}">Produtos</a></div>
+                            <div><a href="">Vincular perfil a uma feira</a></div>
+                            <div><a href="">Ver mapa</a></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script>
+            let dropdown = document.querySelector('.menu-opcoes-dropdown');
+            dropdown.onclick = function(){ dropdown.classList.toggle('active'); }
+        </script>
+    </nav>
         
     <main>@yield('content')</main>
 
