@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('cep');
             $table->string('cidade', 50);
             $table->string('nome_propriedade', 250);
-            $table->rememberToken();
+            //$table->rememberToken();
             $table->timestamps();
         });
     }

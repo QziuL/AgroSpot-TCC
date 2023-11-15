@@ -14,7 +14,8 @@ class RegisterController extends Controller
     }
 
     public function viewRegisterAgricultor() {
-        return view('registerAgricultor');
+        $user_id = request('user_id');
+        return view('registerAgricultor', ['user_id' => $user_id]);
     }
 
     public function store(Request $request) {
@@ -28,7 +29,6 @@ class RegisterController extends Controller
             $usuario->phone             = $request->phone;
             $usuario->email             = $request->email;
             $usuario->password          = bcrypt($request->password);
-            //$usuario->agricultor        = intval($request->button_radio);     //boolval($request->button_radio);
             
             $usuario->save();
 
@@ -36,18 +36,6 @@ class RegisterController extends Controller
         }
         else
         {
-            // $agricultor = new Agricultor();
-            // $agricultor->cpf                = $request->cpf;
-            // $agricultor->name               = mb_strtoupper($request->name, 'UTF-8');
-            // $agricultor->phone              = $request->phone;
-            // $agricultor->password           = bcrypt($request->password);
-            // $agricultor->email              = $request->email;
-            // $agricultor->cep                = $request->cep;
-            // $agricultor->cidade             = mb_strtoupper($request->city, 'UTF-8');
-            // $agricultor->nome_propriedade   = mb_strtoupper($request->nomePropriedade, 'UTF-8');
-
-            // $agricultor->save();
-
             $usuario = new User();
             $usuario->name              = mb_strtoupper($request->name, 'UTF-8');
             $usuario->phone             = $request->phone;
@@ -56,15 +44,20 @@ class RegisterController extends Controller
             
             $usuario->save();
 
-            // $email = $usuario->email;
-            // $user_id = User::where('email', $email)->first()->id;
-
-            return redirect()->route('register.agricultor')->with('msg', 'Sucesso ao cadastrar!');
+            return redirect()->route('register.agricultor', ['user_id' => $usuario->id])->with('msg', 'Sucesso ao cadastrar!');
         }
     }
 
     public function storeAgricultor(Request $request) {
-        $user_id = User::first()->id;
-        dd($user_id);
+        $agricultor = new Agricultor();
+        $agricultor->user_id            = $request->user_id;
+        $agricultor->cpf                = $request->cpf;
+        $agricultor->cep                = $request->cep;
+        $agricultor->cidade             = mb_strtoupper($request->cidade, 'UTF-8');
+        $agricultor->nome_propriedade   = mb_strtoupper($request->nomePropriedade, 'UTF-8');
+
+        $agricultor->save();
+
+        return redirect()->route('login')->with('msg', 'Sucesso ao cadastrar!');
     }
 }

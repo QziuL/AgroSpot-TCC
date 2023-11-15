@@ -16,9 +16,9 @@
                 <label class="label-form" for="cidade">Cidade</label>
                 <input class="input-form" type="text" id="cidade" name="cidade"  placeholder="Cidade..." required> <!-- pattern="\([0-9]{2})\[0-9]{4,5}[0-9]{4}" -->
                 <label class="label-form" for="nomePropriedade">Nome da propriedade</label>
-                <input class="input-form" type="text" name="text" id="text" placeholder="Nome da propriedade..." required>
+                <input class="input-form" type="text" name="nomePropriedade" id="nomePropriedade" placeholder="Nome da propriedade..." required>
             </div>
-
+            <input type="text" name="user_id" value="{{ $user_id }}" hidden>
             <input type="submit" value="Finalizar" id="input-register" class ="button">
         </form>
     </div>
