@@ -22,6 +22,7 @@ class RegisterController extends Controller
         
         // 0 == usuario comum
         // 1 == agricultor
+        // 2 == admin
         if(intval($request->button_radio) == 0)
         {
             $usuario = new User();
@@ -29,6 +30,7 @@ class RegisterController extends Controller
             $usuario->phone             = $request->phone;
             $usuario->email             = $request->email;
             $usuario->password          = bcrypt($request->password);
+            $usuario->tipo              = 0;
             
             $usuario->save();
 
@@ -41,6 +43,7 @@ class RegisterController extends Controller
             $usuario->phone             = $request->phone;
             $usuario->email             = $request->email;
             $usuario->password          = bcrypt($request->password);
+            $usuario->tipo              = 1;             
             
             $usuario->save();
 
