@@ -20,7 +20,7 @@
 <body>
     <nav id="navbar">
         <div id="navbar-menu">
-            <a href="{{ route('index') }}" id="navbar-logo"><img src="/images/editado-removebg-preview.png" alt="Logomarca AgroSpot"></a>
+            <a href="{{ route('initial') }}" id="navbar-logo"><img src="/images/editado-removebg-preview.png" alt="Logomarca AgroSpot"></a>
             <ul>
                 
                 @guest
