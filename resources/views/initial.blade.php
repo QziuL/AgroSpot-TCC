@@ -20,7 +20,7 @@
                         </div>
                     </div>
 
-                    <a href="{{ route('produtos') }}"><input class="bt-recenteProduto-saibaMais" type="button" value="Saiba mais..."></a>
+                    <a href="{{ route('index') }}"><input class="bt-recenteProduto-saibaMais" type="button" value="Saiba mais..."></a>
                     <span class="clear-float"></span>
                 </div>
             @endforeach

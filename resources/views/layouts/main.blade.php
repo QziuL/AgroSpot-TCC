@@ -46,7 +46,7 @@
                             @guest
                             <div><a href="{{ route('register') }}">Cadastrar</a></div>
                             @endguest
-                            <div><a href="{{ route('produtos') }}">Produtos</a></div>
+                            <div><a href="{{ route('index') }}">Produtos</a></div>
                             <div><a href="">Vincular perfil a uma feira</a></div>
                             <div><a href="">Ver mapa</a></div>
                         </div>
