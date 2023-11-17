@@ -3,32 +3,21 @@
 @section('title', 'AgroSpot')
 
 @section('content')
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
     <div id="div-sidebar">
         <header>HEADER</header>
         <ul>
-            <li><a href="#"><i class= "nao sei oque isso faz, tutorial mandou por"></i >TESTE BOTAO</a></li>
-            <li><a href="#"><i class= "nao sei oque isso faz, tutorial mandou por"></i >TESTE BOTAO</a></li>
-            <li><a href="#"><i class= "nao sei oque isso faz, tutorial mandou por"></i >TESTE BOTAO</a></li>
-            <li><a href="#"><i class= "nao sei oque isso faz, tutorial mandou por"></i >TESTE BOTAO</a></li>
-            <li><a href="#"><i class= "nao sei oque isso faz, tutorial mandou por"></i >TESTE BOTAO</a></li>
+            <li><a href="#">BOTÃO 1</a></li>
+            <li><a href="#">BOTÃO 2</a></li>
+            <li><a href="#">BOTÃO 3</a></li>
+            <li><a href="#">BOTÃO 4</a></li>
+            <li><a href="#">BOTÃO 5</a></li>
         </ul>
     </div>
+    <section></section>
 
-    {{-- 
-        <div id="indexdiv-leftside">
-            <h3>Barra lateral</h3>
-        </div>
-        <div id="indexdiv-main">
-            <h3>Conteúdo principal</h3>
-            <div>
-                produto1
-            </div>
-            <div>
-                produto2
-            </div>
-            <div>
-                produto3
-            </div>
-        </div>
-    --}}
 @endsection

@@ -12,13 +12,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    
+    <script src="https://kit.fontawesome.com/4b10770594.js" crossorigin="anonymous"></script>
 
     <title>@yield('title')</title>
 </head>
 <body>
     <nav id="navbar">
         <div id="navbar-menu">
-            <a href="" id="navbar-logo"><img src="/images/editado-removebg-preview.png" alt="Logomarca AgroSpot"></a>
+            <a href="{{ route('index') }}" id="navbar-logo"><img src="/images/editado-removebg-preview.png" alt="Logomarca AgroSpot"></a>
             <ul>
                 
                 @guest

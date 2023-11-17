@@ -12,13 +12,13 @@ body{
 
 #div-content-main {
     position: fixed;
-    top: 21%;
+    /* top: 21%; */
     width: 100%;
-    height: 45%;
+    height: 100vh;
     /* background-image: url(https://agronfoodacademy.com/wp-content/uploads/2021/12/Capitulo-de-livro.png); */
     background-image: url(../images/fundo\ tela\ inicial\ -\ 2.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-color: lightgray 50%;
 }
 
@@ -192,7 +192,7 @@ footer{
     font-family: 'Inter', sans-serif;
     width: 280px;
     height: 58vh;
-    margin-top: 6px;
+    margin-top: 5vh;
     margin-left: 5em;
     border-radius: 15px;
     background: rgba(113, 103, 14, 0.90);
@@ -271,7 +271,7 @@ footer{
 
 /* == Frase do meio == */
 .div-content-frase {
-    margin-right: 20%;
+    margin-right: 15%;
 }
 
 
@@ -295,11 +295,6 @@ footer{
 
 
 /* == CSS INDEX BLADE == */
-/* #indexdiv {
-    display: flex;
-    justify-content: space-around;
-}
- */
 
 #div-sidebar a {
     text-decoration: none;
@@ -310,10 +305,11 @@ footer{
 
 #div-sidebar {
     position: fixed;
-    left: 0;
+    left: -250px;
     width: 250px;
     height: 100%;
     background-color:#b5c588;
+    transition: all .5s ease;
 }
 
 #div-sidebar header {
@@ -336,14 +332,72 @@ footer{
     color: #ECECEC;
     padding-left: 40px;
     box-sizing: border-box;
-    border-top: 1px solid rgba(255, 255, 255, 1);
+    border-top: 1px solid rgba(255, 255, 255, .1);
     border-bottom: 1px solid #524b0c;
-    transition: .4s;
+    transition: all .4s;
 }
 
-    ul li:hover a{
+#div-sidebar ul li:hover a{
     padding-left: 50px;
+}
 
+/* botão menu sidebar */
+#check {
+    display: none;
+}
+
+label #btn, label #cancel {
+    position: absolute;
+    cursor: pointer;
+    background-color:#908410;
+    border-radius: 3px;
+    margin-top: 10vh;
+}
+
+label #btn {
+    left: 30px;
+    top: 24px;
+    font-size: 15px;
+    color: #FFF;
+    padding: 6px 12px;
+    transition: all .4s;
+}
+
+label #cancel {
+    z-index: 10;
+    left: -195px;
+    top: 24px;
+    font-size: 15px;
+    color: #FFF;
+    padding: 4px 9px;
+    transition: all .4s ease;
+}
+
+#check:checked ~ #div-sidebar{
+    left: 0;
+}
+
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #cancel{
+    left: 195px;
+}
+
+/* background - animação */
+#check:checked ~ section {
+    margin-left: 250px;
+}
+
+section {
+    height: 90vh;
+    transition: all .4s ease;
+    background: url(../images/fundo\ tela\ inicial.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 /* == Footer - entrar em contato == */
