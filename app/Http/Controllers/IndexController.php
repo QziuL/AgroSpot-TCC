@@ -10,8 +10,9 @@ class IndexController extends Controller
 {
     public function show() {
         $produtos = Produto::all();
+        $user = auth()->user();
 
-        return view('index', ['produtos' => $produtos]);
+        return view('index', ['produtos' => $produtos, 'user' => $user]);
     }
 
     public function viewInitial() {
