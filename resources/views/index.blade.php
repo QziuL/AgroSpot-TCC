@@ -22,15 +22,7 @@
             </ul>
         </div>
         
-        <section>
-            {{-- <div id="retangulo">
-            
-            </div> --}}
-            
-            <div id="div-space-left">
-
-            </div>
-
+        <section>            
             <div id="div-container-produtos">
                 <div class="div-produto">
                     <p>PRODUTO 1</p>
@@ -41,8 +33,36 @@
                 <div class="div-produto">
                     <p>PRODUTO 3</p>
                 </div>
+                <div class="div-produto">
+                    <p>PRODUTO 4</p>
+                </div>
+                <div class="div-produto">
+                    <p>PRODUTO 5</p>
+                </div>
+                <div class="div-produto">
+                    <p>PRODUTO 6</p>
+                </div>
+                <div class="div-produto">
+                    <p>PRODUTO 7</p>
+                </div>
+                <div class="div-produto">
+                    <p>PRODUTO 8</p>
+                </div>
+                <div class="div-produto">
+                    <p>PRODUTO 9</p>
+                </div>
+                <div class="div-produto">
+                    <p>PRODUTO 10</p>
+                </div>
+                <div class="div-produto">
+                    <p>PRODUTO 11</p>
+                </div>
+                <div class="div-produto">
+                    <p>PRODUTO 12</p>
+                </div>
             </div>
         </section>
+        
     </div>
 @endsection
 
