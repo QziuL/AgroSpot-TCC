@@ -397,29 +397,68 @@ section {
     height: 75vh;
     transition: all .4s ease;
     background-color: #fdfdfd;
-    /* background: url(../images/fundo\ tela\ inicial.jpg) no-repeat;
+    background: url(../images/fundo\ tela\ inicial.jpg) no-repeat;
     background-position: center;
-    background-size: cover; */
+    background-size: cover;
 }
 
 #div-container-produtos {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     box-sizing: border-box;
     /* text-align: center; */
     width: 78%;
     height: 100%;
     padding: 2rem;
-    margin: auto;
+    margin-left: 5%;
+    margin-right: auto;
 }
 
+/* list produto (ao centro) */
+
 .div-produto {
-    width: 220px;
-    height: 120px;
-    background-color: rgb(38, 92, 43);
-    border-radius: 3px; 
     display: inline-block;
-    margin: 1.1rem 1.5rem;
+    box-sizing: border-box;
+    width: 220px;
+    height: 180px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin: 0 0.9rem;   
 }
+
+.div-produto-img {
+    height: 100px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #2b5333b2;
+    margin: 8px;
+    border-radius: 4px;
+}
+
+.img-produto:hover {
+   position: relative;
+   top: 3.2vh;
+}
+
+.img-produto {
+    width: 100px;
+}
+
+.div-produto h3,
+.div-produto span {
+    margin: 0 8px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+.div-produto h3 {
+    font-size: 1.1em;
+}
+
+.div-produto span {
+    font-size: 0.8em;
+    color: #a19e9e;
+}
+
 
 /* == Footer - entrar em contato == */
 footer #footer-redes-sociais {
@@ -460,4 +499,30 @@ footer #footer-redes-sociais {
     line-height: 150%; /* 15px */
     letter-spacing: -0.11px;
     padding: 5px;
+}
+
+#produtos-agricultor {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.produto-agricultor {
+    background-color: #f9f5ec;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+}
+
+.produto-img {
+    max-width: 100%;
+    height: 60px;
+    border-radius: 8px;
+}
+
+.produto-info {
+    margin-top: 10px;
 }

@@ -22,3 +22,5 @@ Route::get('/index', [IndexController::class, 'show'])->name('index');
 
 Route::get('/registerProduto', [ProdutoController::class,'show'])->name('showProduto.cadastro')->middleware('auth');
 Route::post('/registerProduto', [ProdutoController::class,'storeProduto'])->name('storeProduto.cadastro')->middleware('auth');
+
+Route::get('/index/produto', [ProdutoController::class, 'selecionado']);
