@@ -24,45 +24,22 @@
         
         <section>            
             <div id="div-container-produtos">
-                <div class="div-produto">
-                    <p>PRODUTO 1</p>
-                </div>
-                <div class="div-produto">
-                    <p>PRODUTO 2</p>
-                </div>
-                <div class="div-produto">
-                    <p>PRODUTO 3</p>
-                </div>
-                <div class="div-produto">
-                    <p>PRODUTO 4</p>
-                </div>
-                <div class="div-produto">
-                    <p>PRODUTO 5</p>
-                </div>
-                <div class="div-produto">
-                    <p>PRODUTO 6</p>
-                </div>
-                <div class="div-produto">
-                    <p>PRODUTO 7</p>
-                </div>
-                <div class="div-produto">
-                    <p>PRODUTO 8</p>
-                </div>
-                <div class="div-produto">
-                    <p>PRODUTO 9</p>
-                </div>
-                <div class="div-produto">
-                    <p>PRODUTO 10</p>
-                </div>
-                <div class="div-produto">
-                    <p>PRODUTO 11</p>
-                </div>
-                <div class="div-produto">
-                    <p>PRODUTO 12</p>
-                </div>
+                @foreach ($produtos as $produto)
+                    <div class="div-produto">
+                        <div class="div-produto-img">
+                            <a href="#"><img class="img-produto" src="/img/produtos/{{ $produto->image }}" alt="{{$produto->nome}}"></a>
+                        </div>
+                        <h3>{{ Str::title($produto->nome) }}</h3>
+                        
+                        @if ($produto->disponibilidade == 1)
+                            <span>DISPONIVEL</span>
+                        @else
+                            <span>INDISPONIVEL</span>
+                        @endif
+                        
+                    </div>
+                @endforeach                
             </div>
         </section>
-        
     </div>
 @endsection
-
