@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\AgricultorController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'viewInitial'])->name('initial');
@@ -19,8 +20,14 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register.s
 Route::post('/register/agricultor', [RegisterController::class, 'storeAgricultor'])->name('register.storeAgricultor');
 
 Route::get('/index', [IndexController::class, 'show'])->name('index');
+Route::get('/index/produto', [ProdutoController::class, 'selecionado']);
 
 Route::get('/registerProduto', [ProdutoController::class,'show'])->name('showProduto.cadastro')->middleware('auth');
 Route::post('/registerProduto', [ProdutoController::class,'storeProduto'])->name('storeProduto.cadastro')->middleware('auth');
 
-Route::get('/index/produto', [ProdutoController::class, 'selecionado']);
+
+
+Route::get('/dashboard/addProduto', [AgricultorController::class, 'show'])->name('showAddProduto')->middleware('auth');
+Route::get('/dashboard/listProdutos', [AgricultorController::class, 'listProdutos'])->name('listProdutos')->middleware('auth');
+Route::post('/dashboard/addProduto/{id}', [AgricultorController::class, 'addProduto'])->name('addProduto')->middleware('auth');
+Route::delete('/dashboard/removeProduto/{id}', [AgricultorController::class, 'destroy'])->name('removeProduto')->middleware('auth');
