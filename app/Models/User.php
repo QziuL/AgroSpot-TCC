@@ -64,4 +64,8 @@ class User extends Authenticatable
     public function agricultor() {
         return $this->hasOne(Agricultor::class);
     }    
+
+    public function produtos() {
+        return $this->belongsToMany(Produto::class);
+    }
 }
