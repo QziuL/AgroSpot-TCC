@@ -44,8 +44,10 @@ class RegisterController extends Controller
             $usuario->email             = $request->email;
             $usuario->password          = bcrypt($request->password);
             $usuario->tipo              = 1;             
-            
+
             $usuario->save();
+            //$usuario->agricultor()->attach($usuario->id);
+
 
             return redirect()->route('register.agricultor', ['user_id' => $usuario->id])->with('msg', 'Sucesso ao cadastrar!');
         }
