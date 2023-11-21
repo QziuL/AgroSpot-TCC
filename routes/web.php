@@ -6,6 +6,8 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\AgricultorController;
+use App\Http\Controllers\FeiraController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'viewInitial'])->name('initial');
@@ -24,7 +26,8 @@ Route::get('/index/produto', [ProdutoController::class, 'selecionado']);
 
 Route::get('/registerProduto', [ProdutoController::class,'show'])->name('showProduto.cadastro')->middleware('auth');
 Route::post('/registerProduto', [ProdutoController::class,'storeProduto'])->name('storeProduto.cadastro')->middleware('auth');
-
+Route::get('/registerFeira', [FeiraController::class, 'show'])->middleware('auth');
+Route::post('/registerFeira', [FeiraController::class, 'store'])->name("storeFeira")->middleware('auth');
 
 
 Route::get('/dashboard/addProduto', [AgricultorController::class, 'show'])->name('showAddProduto')->middleware('auth');
