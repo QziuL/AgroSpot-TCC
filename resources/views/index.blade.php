@@ -22,8 +22,21 @@
             </ul>
         </div>
         
-        <section>            
+        <section>
+            <div id="div-buscarProduto">
+                <form action="{{route('index')}}" method="GET">
+                    <input type="text" name="busca" id="busca" placeholder="Busque um produto...">
+                    <input type="submit" value="Buscar" id="btn-buscar">
+                </form>
+            </div>
+            
+            
             <div id="div-container-produtos">
+                @if($busca)
+                    <h1>Produto pesquisado: {{ $busca }}</h1>
+                @else
+                    <h1>Produtos</h1>
+                @endif
                 @foreach ($produtos as $produto)
                     <div class="div-produto">
                         <div class="div-produto-img">
@@ -36,9 +49,19 @@
                         @else
                             <span>INDISPONIVEL</span>
                         @endif
-                        
                     </div>
-                @endforeach                
+                    @if ($busca)
+                        <a id="limparPesquisa" href="{{ route('index') }}">Limpar pesquisa</a>
+                    @endif
+                @endforeach 
+                
+                @if(count($produtos) == 0 && $busca)
+                   <p style="font-size: 20px; margin-bottom:10px; margin-left:15px;">O produto "{{$busca}}" não foi encontrado...</p>
+                   <a id="limparPesquisa" href="{{ route('index') }}">Limpar pesquisa</a>
+                @elseif(count($produtos) == 0)
+                    <p>Não há produtos disponíveis!</p> 
+                @endif
+                
             </div>
         </section>
     </div>

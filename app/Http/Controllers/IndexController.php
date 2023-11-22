@@ -9,10 +9,21 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function show() {
-        $produtos = Produto::all();
+        $busca = request('busca');
+
+        if($busca) {
+            $produtos = Produto::where([
+                ['nome', 'like', '%'.$busca.'%']
+            ])->get();
+        }
+        else {
+            $produtos = Produto::all();
+        }
+
+        
         $user = auth()->user();
 
-        return view('index', ['produtos' => $produtos, 'user' => $user]);
+        return view('index', ['produtos' => $produtos, 'user' => $user, 'busca' => $busca]);
     }
 
     public function viewInitial() {
