@@ -17,7 +17,7 @@
                 <header>Olá, {{ Str::title($user->name) }}</header>
             @endauth
             <ul>
-                <li><a href="#">AGRICULTORES</a></li>
+                <li><a href="{{ route('listar.agricultores') }}">AGRICULTORES</a></li>
                 <li><a href="#">FEIRAS</a></li>
             </ul>
         </div>
