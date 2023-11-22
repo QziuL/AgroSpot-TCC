@@ -34,3 +34,5 @@ Route::get('/dashboard/addProduto', [AgricultorController::class, 'show'])->name
 Route::get('/dashboard/listProdutos', [AgricultorController::class, 'listProdutos'])->name('listProdutos')->middleware('auth');
 Route::post('/dashboard/addProduto/{id}', [AgricultorController::class, 'addProduto'])->name('addProduto')->middleware('auth');
 Route::delete('/dashboard/removeProduto/{id}', [AgricultorController::class, 'destroy'])->name('removeProduto')->middleware('auth');
+
+Route::get('/agricultores', [AgricultorController::class, 'list'])->name('listar.agricultores');
