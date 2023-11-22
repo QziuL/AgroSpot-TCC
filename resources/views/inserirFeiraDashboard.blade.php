@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inserir Feira</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body>
-    <div>
-        <h1>INSERIR DADOS DA FEIRA</h1>
-        <div>
+    <div id="div-main">
+        <div class="center">
+            <h1>INSERIR DADOS DA FEIRA</h1>
+        </div>
+        <div id="div-form">
             <form action="{{route('storeFeira')}}" method="POST">
                 @csrf
                 <div>
@@ -29,11 +32,11 @@
  
                 <div>
                     <label for="descricao">Descricao</label>
-                    <textarea name="descricao" id="" cols="30" rows="10" required>
-                        Descrição....
-                    </textarea>
+                    <div id="div-textarea">
+                        <textarea name="descricao" id="" cols="20" rows="5" required placeholder="Descrição..."></textarea>
+                    </div>
                 </div>
-                <button type="submit">Adicionar</button>
+                <button type="submit" id="btn-submit">Adicionar</button>
             </form>
         </div>
     </div>
