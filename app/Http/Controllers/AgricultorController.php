@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\Agricultor;
+use App\Models\User;
 use DB;
 
 class AgricultorController extends Controller
@@ -41,6 +42,31 @@ class AgricultorController extends Controller
             'user' => $user,
             'produtosAdicionado' => $produtoAdicionado,
             'aux' => $aux,
+        ]);
+    }
+
+    public function list() {
+        
+        $agricultores = Agricultor::all();
+
+        $userAgricultores[] = new User();
+        $aux = 0;
+
+        foreach ($agricultores as $agricultor) {
+            $userAgricultores[$aux] = User::where([
+                ['id', '=', $agricultor->user_id]
+            ])->get();
+
+            
+
+            $aux++;
+        }
+        $aux = 0;
+
+        return view('listAgricultores', [
+            'userAgricultores' => $userAgricultores,
+            'aux' => $aux,
+            'agricultores' => $agricultores,
         ]);
     }
 
