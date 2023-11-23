@@ -23,20 +23,18 @@
         </div>
         
         <section>       
-            <div id="div-container-produtos">
+            <div id="div-container-agricultores">
                 @foreach ($userAgricultores as $agricultor)
-                    <div class="div-produto">
+                    <div class="div-agricultor">
                         <h3>{{ Str::title($agricultor[$aux]->name) }}</h3>
                         <div>
                             <span>{{ $agricultores[$aux]->cidade }}</span>
-                            
+                            <div class="div-button">
+                                <a href="#" class="button-ver-perfil">Ver perfil</a>
+                            </div>
                         </div>
                         <div>
                             <span>{{ $agricultores[$aux]->nome_propriedade }}</span>
-                        </div>
-                        <a href="#">Ver perfil</a>
-                    </div>
-                    
                 @endforeach 
             </div>
         </section>

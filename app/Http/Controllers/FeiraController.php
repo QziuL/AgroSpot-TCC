@@ -23,4 +23,24 @@ class FeiraController extends Controller
 
         return redirect()->route('index')->with('msg', 'Feira adicionada com sucesso!');
     }
+
+    public function list() {
+        $userAuth = auth()->user();
+        $busca = request('busca');
+
+        if($busca) {
+            $feiras = Feira::where([
+                ['nome', 'like', '%'.$busca.'%']
+            ])->get();
+        }
+        else {
+            $feiras = Feira::all();
+        }
+
+        return view('listFeiras', [
+            'feiras' => $feiras,
+            'busca' => $busca,
+            'user' => $userAuth,
+        ]);
+    }
 }

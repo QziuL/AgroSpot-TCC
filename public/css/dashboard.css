@@ -1,11 +1,15 @@
 * {
-    margin: 0;
-    padding: 0;
+   
+    margin: 15px;
+    padding: 0px;
     box-sizing: border-box;
     font-family: "Raleway", sans-serif;
 }
 body{
-    background-color: #f2f2f2;
+    background-image: url(../images/fundo\ tela\ inicial.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
 }
 
 #div-main {
@@ -15,9 +19,9 @@ body{
 }
 
 .center {
-    width: 40%;
+    width: 30%;
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -31,8 +35,8 @@ body{
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 #div-form input:focus {
-    border-color: #4CAF50;
-    box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+    border-color: rgb(149, 221, 55)5, 255);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
     outline: none;
 }
 
@@ -41,7 +45,7 @@ body{
 }
 
 #div-form input:invalid {
-    border-color: #75e535;
+    border-color: #fcfcfc;
 }
 
 #div-form input:valid {
@@ -49,9 +53,8 @@ body{
 }
 
 #div-form {
-    margin-top: 60px;
+    margin-top: 40px;
     background-color: #f2f2f2;
-    border: 1px solid black;
     border-radius: 8px;
     width: 70%;
     max-width: 800px;
@@ -72,7 +75,7 @@ body{
 
 #btn-submit {
     padding: 5px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(167, 182, 101)
     border-radius: 5px;
     border: 1px solid black;
     color: rgb(0, 0, 0);
@@ -81,7 +84,7 @@ body{
 }
 
 #btn-submit:hover {
-    background-color: black;
+    background-color: rgb(135, 177, 38);
     color: white;
 }
 
@@ -90,21 +93,54 @@ body{
 
 
 /* CSS DASHBOARD INSERIR PRODUTO */
+
 #div-content-main {
     width: 100%;
     height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
+
 
 #div-form-produto {
     width: 550px;
     margin-top: 30px;
     padding: 5px;
-    background-color: darkgray;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-left: auto;
     margin-right: auto;
 }
 
+
 #div-form-produto label {
     font-size: 18px;
+    display: block;
+    margin-bottom: 8px;
 
+}
+
+#div-form-produto input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 16px;
+}
+/* O HOVER NAO ESTÁ FUNFANDO */
+#div-form-produto button {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#div-form-produto button:hover {
+    background-color: #45a049;
 }

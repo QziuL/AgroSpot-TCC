@@ -63,10 +63,13 @@ class AgricultorController extends Controller
         }
         $aux = 0;
 
+        $userAuth = auth()->user();
+
         return view('listAgricultores', [
             'userAgricultores' => $userAgricultores,
             'aux' => $aux,
             'agricultores' => $agricultores,
+            'user' => $userAuth,
         ]);
     }
 

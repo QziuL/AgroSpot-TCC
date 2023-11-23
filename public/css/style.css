@@ -438,11 +438,79 @@ label #cancel {
 section {
     height: 75vh;
     transition: all .4s ease;
-    background-color: #fdfdfd;
-    background: url(../images/fundo\ tela\ inicial.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
+/* mexer */
+body {
+    background-image: url(../images/fundo\ tela\ inicial.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+}
+#div-container-agricultores {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    font-family: Helvetica;
+}
+
+.div-agricultor {
+    background-color: #f8fcf0;
+    width: 200px;
+    height: 300px;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    word-wrap: break-word;
+
+}
+.div-agricultor:hover {
+    transform: scale(1.05);
+}
+
+.div-agricultor h3 {
+    text-align: center;
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.div-agricultor p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.div-agricultor img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.button-ver-perfil {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(152, 189, 49);
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-ver-perfil:hover {
+    background-color: rgb(129, 145, 38);
+}
+
+/* mexer */
+
+
 
 #div-container-produtos {
     /* border: 1px solid black; */

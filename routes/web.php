@@ -36,3 +36,5 @@ Route::post('/dashboard/addProduto/{id}', [AgricultorController::class, 'addProd
 Route::delete('/dashboard/removeProduto/{id}', [AgricultorController::class, 'destroy'])->name('removeProduto')->middleware('auth');
 
 Route::get('/agricultores', [AgricultorController::class, 'list'])->name('listar.agricultores');
+
+Route::get('/feiras', [FeiraController::class, 'list'])->name('listar.feiras');
