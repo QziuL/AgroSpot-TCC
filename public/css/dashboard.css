@@ -1,29 +1,72 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+body{
+    background-color: #f2f2f2;
 }
 
 #div-main {
     width: 100%;
     height: 100vh;
-    /* text-align: center; */
+    
 }
 
 .center {
     width: 40%;
     margin: auto;
     margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#div-form input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+#div-form input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+    outline: none;
+}
+
+#div-form input::placeholder {
+    color: #aaa;
+}
+
+#div-form input:invalid {
+    border-color: #75e535;
+}
+
+#div-form input:valid {
+    border-color: #4CAF50;
 }
 
 #div-form {
+    margin-top: 60px;
+    background-color: #f2f2f2;
     border: 1px solid black;
-    width: 550px;
-    margin: auto auto auto auto;
-    padding: 10px;
+    border-radius: 8px;
+    width: 70%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); ;
 }
 
 #div-textarea textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     resize: none;
 }
 
@@ -40,4 +83,28 @@
 #btn-submit:hover {
     background-color: black;
     color: white;
+}
+
+
+
+
+
+/* CSS DASHBOARD INSERIR PRODUTO */
+#div-content-main {
+    width: 100%;
+    height: 100vh;
+}
+
+#div-form-produto {
+    width: 550px;
+    margin-top: 30px;
+    padding: 5px;
+    background-color: darkgray;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#div-form-produto label {
+    font-size: 18px;
+
 }
