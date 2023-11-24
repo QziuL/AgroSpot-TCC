@@ -10,27 +10,27 @@
 <body>
     <div id="div-main">
         <div class="center">
-            <h1>INSERIR DADOS DA FEIRA</h1>
+            <h1>Registrar Feira</h1>
         </div>
         <div id="div-form">
             <form action="{{route('storeFeira')}}" method="POST">
                 @csrf
-                <div>
+                <div class="div-dados">
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" id="nome" required>
                 </div>
                 
-                <div>
+                <div class="div-dados">
                     <label for="CEP">CEP</label>
                     <input type="text" name="cep" id="cep" required>
                 </div>
                 
-                <div>
+                <div class="div-dados">
                     <label for="cidade">Cidade</label>
                     <input type="text" name="cidade" id="cidade" required>
                 </div>
  
-                <div>
+                <div class="div-dados">
                     <label for="descricao">Descricao</label>
                     <div id="div-textarea">
                         <textarea name="descricao" id="" cols="20" rows="5" required placeholder="Descrição..."></textarea>

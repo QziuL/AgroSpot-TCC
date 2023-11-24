@@ -441,13 +441,16 @@ section {
     background-position: center;
     background-size: cover;
 }
-/* mexer */
-body {
+
+
+/* CSS LIST AGRICULTORES */
+#div-main section {
     background-image: url(../images/fundo\ tela\ inicial.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
 }
+
 #div-container-agricultores {
     display: flex;
     justify-content: space-around;
@@ -459,7 +462,7 @@ body {
 .div-agricultor {
     background-color: #f8fcf0;
     width: 200px;
-    height: 300px;
+    height: 150px;
     padding: 15px;
     margin: 10px;
     border-radius: 8px;
@@ -467,8 +470,8 @@ body {
     transition: transform 0.3s ease-in-out;
     overflow: hidden;
     word-wrap: break-word;
-
 }
+
 .div-agricultor:hover {
     transform: scale(1.05);
 }
@@ -490,6 +493,7 @@ body {
     border-radius: 4px;
     margin-bottom: 10px;
 }
+
 .button-ver-perfil {
     position: absolute;
     bottom: 10px;
@@ -501,7 +505,8 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    text-decoration: none;
+    transition: all .4s;
 }
 
 .button-ver-perfil:hover {

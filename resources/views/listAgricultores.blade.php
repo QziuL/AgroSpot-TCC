@@ -18,23 +18,42 @@
             @endauth
             <ul>
                 <li><a href="{{ route('listar.agricultores') }}">AGRICULTORES</a></li>
-                <li><a href="#">FEIRAS</a></li>
+                <li><a href="{{ route('listar.feiras') }}">FEIRAS</a></li>
             </ul>
         </div>
         
         <section>       
             <div id="div-container-agricultores">
+                @php
+                    $aux2 = 0;
+                @endphp
                 @foreach ($userAgricultores as $agricultor)
+                
                     <div class="div-agricultor">
-                        <h3>{{ Str::title($agricultor[$aux]->name) }}</h3>
                         <div>
-                            <span>{{ $agricultores[$aux]->cidade }}</span>
-                            <div class="div-button">
-                                <a href="#" class="button-ver-perfil">Ver perfil</a>
-                            </div>
+                            <h3>{{ Str::title($agricultor[$aux]->name) }}</h3>
                         </div>
                         <div>
-                            <span>{{ $agricultores[$aux]->nome_propriedade }}</span>
+                            <div>
+                                <span>Localização: 
+                                    <br>
+                                    {{ Str::title($agricultores[$aux2]->cidade) }}
+                                </span>
+                            </div>
+                            <div>
+                                <span>Nome da propriedade: 
+                                    <br>
+                                    {{ Str::title($agricultores[$aux2]->nome_propriedade) }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="div-button">
+                            <a href="#" class="button-ver-perfil">Ver perfil</a>
+                        </div>
+                    </div>
+                    @php
+                        $aux2++;
+                    @endphp
                 @endforeach 
             </div>
         </section>
