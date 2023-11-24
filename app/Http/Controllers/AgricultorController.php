@@ -57,14 +57,11 @@ class AgricultorController extends Controller
                 ['id', '=', $agricultor->user_id]
             ])->get();
 
-            
-
             $aux++;
         }
         $aux = 0;
 
         $userAuth = auth()->user();
-
         return view('listAgricultores', [
             'userAgricultores' => $userAgricultores,
             'aux' => $aux,
