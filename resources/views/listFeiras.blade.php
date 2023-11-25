@@ -31,23 +31,23 @@
             </div>
             
             
-            <div id="div-container-produtos">
+            <div id="div-container-feiras">
                 @if($busca)
                     <h1>Feira pesquisada: {{ $busca }}</h1>
                 @else
                     <h1>Feiras</h1>
                 @endif
                 @foreach ($feiras as $feira)
-                    <div class="div-produto">
+                    <div class="div-feira">
                         {{-- <div class="div-produto-img">
                             <a href="#"><img class="img-produto" src="/img/produtos/{{ $produto->image }}" alt="{{$produto->nome}}"></a>
                         </div> --}}
                         <div>
                             <h3>{{ Str::title($feira->nome) }}</h3>
                         </div>
-                        <div>
+                        <div class="details-feira">
                             <div>
-                                <span>Endereço: {{ $feira->cidade }}, {{ $feira->cep }}</span>
+                                <span>Endereço: {{Str::title($feira->cidade)}}, {{ $feira->cep }}</span>
                             </div>
                             <div>
                                 <span>Descrição: {{ $feira->descricao }}</span>
@@ -56,7 +56,7 @@
                         
                     </div>
                     @if ($busca)
-                        <a id="limparPesquisa" href="{{ route('index') }}">Limpar pesquisa</a>
+                        <a id="limparPesquisa" href="{{ route('listar.feiras') }}">Limpar pesquisa</a>
                     @endif
                 @endforeach 
                 
