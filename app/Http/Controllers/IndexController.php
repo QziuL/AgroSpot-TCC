@@ -31,4 +31,16 @@ class IndexController extends Controller
 
         return view('initial', ['produtosRecentes' => $produtosRecentes]);
     }
+
+    public function redirectDashboard() {
+        $user = auth()->user();
+
+        if($user->tipo == 1) { return view('dashboardAgricultor', compact('user')); } 
+        elseif ($user->tipo == 2) { return view('dashboardAdmin'); }
+        else { return redirect()->back()->with('msg', 'Você não tem permissão !!'); }
+    }
+
+    public function emBreve() {
+        return view('embreve');
+    }
 }
