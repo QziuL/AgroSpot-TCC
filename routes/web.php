@@ -1,12 +1,15 @@
 <?php
 
-use App\Http\Controllers\EventController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\IndexController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\ProdutoController;
-use App\Http\Controllers\AgricultorController;
-use App\Http\Controllers\FeiraController;
+use App\Http\Controllers\{
+    EventController,
+    LoginController,
+    IndexController,
+    RegisterController,
+    ProdutoController,
+    AgricultorController,
+    FeiraController,
+    AdminController,
+};
 
 use Illuminate\Support\Facades\Route;
 
@@ -26,15 +29,20 @@ Route::get('/index/produto', [ProdutoController::class, 'selecionado']);
 
 Route::get('/registerProduto', [ProdutoController::class,'show'])->name('showProduto.cadastro')->middleware('auth');
 Route::post('/registerProduto', [ProdutoController::class,'storeProduto'])->name('storeProduto.cadastro')->middleware('auth');
-Route::get('/registerFeira', [FeiraController::class, 'show'])->middleware('auth');
+Route::get('/registerFeira', [FeiraController::class, 'show'])->name('showFeira.cadastro')->middleware('auth');
 Route::post('/registerFeira', [FeiraController::class, 'store'])->name("storeFeira")->middleware('auth');
 
+Route::get('/dashboard', [IndexController::class, 'redirectDashboard'])->name('redirect.dashboard')->middleware('auth');
+Route::get('/dashboard/admin', [AdminController::class, 'show'])->name('admin.dashboard')->middleware('auth');
 
-Route::get('/dashboard/addProduto', [AgricultorController::class, 'show'])->name('showAddProduto')->middleware('auth');
-Route::get('/dashboard/listProdutos', [AgricultorController::class, 'listProdutos'])->name('listProdutos')->middleware('auth');
-Route::post('/dashboard/addProduto/{id}', [AgricultorController::class, 'addProduto'])->name('addProduto')->middleware('auth');
-Route::delete('/dashboard/removeProduto/{id}', [AgricultorController::class, 'destroy'])->name('removeProduto')->middleware('auth');
+Route::get('/dashboard/agricultor', [AgricultorController::class, 'dashboard'])->name('agricultor.dashboard')->middleware('auth');
+Route::get('/dashboard/agricultor/addProduto', [AgricultorController::class, 'show'])->name('showAddProduto')->middleware('auth');
+Route::get('/dashboard/agricultor/listProdutos', [AgricultorController::class, 'listProdutos'])->name('listProdutos')->middleware('auth');
+Route::post('/dashboard/agricultor/addProduto/{id}', [AgricultorController::class, 'addProduto'])->name('addProduto')->middleware('auth');
+Route::delete('/dashboard/agricultor/removeProduto/{id}', [AgricultorController::class, 'destroy'])->name('removeProduto')->middleware('auth');
 
 Route::get('/agricultores', [AgricultorController::class, 'list'])->name('listar.agricultores');
 
 Route::get('/feiras', [FeiraController::class, 'list'])->name('listar.feiras');
+
+Route::get('/embreve', [IndexController::class, 'emBreve'])->name('embreve');
