@@ -18,7 +18,7 @@
                 <input class="input-form" type="password" name="password" id="password" placeholder="Digite sua senha..." required>
                 {{-- <input type="password" name="password" id="confirm_password" placeholder="Confirme sua senha" required> --}}
                 
-                <div>
+                <div id="div-radioDetails">
                     <h3>Você é um produtor?</h3>
                     <label>
                         <input type="radio" name="button_radio" id="button-radio-sim" value="1">Sim

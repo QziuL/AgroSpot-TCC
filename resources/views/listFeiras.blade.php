@@ -23,7 +23,7 @@
         </div>
         
         <section>
-            <div id="div-buscarProduto">
+            <div id="div-buscar">
                 <form action="{{ route('listar.feiras') }}" method="GET">
                     <input type="text" name="busca" id="busca" placeholder="Busque uma feira...">
                     <input type="submit" value="Buscar" id="btn-buscar">

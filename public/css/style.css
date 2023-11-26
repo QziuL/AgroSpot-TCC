@@ -309,7 +309,7 @@ footer{
     padding: 5px;
 }
 
-#div-buscarProduto {
+#div-buscar {
     width: 30%;
     margin: auto;
     text-align: center;
@@ -317,7 +317,7 @@ footer{
     
 }
 
-#div-buscarProduto #busca {
+#div-buscar #busca {
     width: 60%;
     padding: 10px;
     border: none;
@@ -341,7 +341,7 @@ footer{
     background-color: #adb893;
 }
 
-#div-buscarProduto input:focus {
+#div-buscar input:focus {
     outline: 1px solid green;
 }
 
@@ -428,8 +428,8 @@ footer{
     font-family: sans-serif;
     color: #f5f5f5;
     text-align: center;
-    padding-right: 2rem;
-    line-height: 70px;
+    padding: 20px 2rem 20px 5px;
+    /* line-height: 70px; */
     /* background: #524b0c; */
     background-color:#908410;
     user-select: none;
@@ -478,7 +478,7 @@ label #btn {
 
 label #cancel {
     z-index: 10;
-    left: -195px;
+    left: -210px;
     top: 24px;
     font-size: 15px;
     color: #FFF;
@@ -496,7 +496,7 @@ label #cancel {
 }
 
 #check:checked ~ label #cancel{
-    left: 195px;
+    left: 210px;
 }
 
 /* background - animação */
@@ -522,22 +522,32 @@ section {
 }
 
 #div-container-agricultores {
-    display: flex;
+    /* display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 20px;
+    flex-wrap: wrap; */
+    width: 78%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
     font-family: Helvetica;
 }
 
+#div-container-agricultores h1 {
+    margin-left: 10px;
+    font-family: 'Inter', sans-serif;
+}
+
 .div-agricultor {
+    display: inline-block;
     background-color: #f8fcf0;
     width: 200px;
     height: 150px;
     padding: 15px;
     margin: 10px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.267);
+    transition: all 0.3s ease-in-out;
     overflow: hidden;
     word-wrap: break-word;
 }

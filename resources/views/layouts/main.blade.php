@@ -47,8 +47,11 @@
                             <div><a href="{{ route('register') }}">Cadastrar</a></div>
                             @endguest
                             <div><a href="{{ route('index') }}">Produtos</a></div>
-                            <div><a href="">Vincular perfil a uma feira</a></div>
-                            <div><a href="">Ver mapa</a></div>
+                            <div><a href="{{ route('embreve') }}">Ver mapa</a></div>
+                            @auth
+                            <div><a href="{{ route('redirect.dashboard') }}">Dashboard</a></div>
+                            @endauth
+                            {{-- vincular perfil a uma feira --}}
                         </div>
                     </div>
                 </li>
