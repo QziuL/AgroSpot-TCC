@@ -46,28 +46,71 @@ class AgricultorController extends Controller
     }
 
     public function list() {
-        
-        $agricultores = Agricultor::all();
+        $userAuth = auth()->user();
+        $busca = request('busca');
 
-        $userAgricultores[] = new User();
-        $aux = 0;
-
-        foreach ($agricultores as $agricultor) {
-            $userAgricultores[$aux] = User::where([
-                ['id', '=', $agricultor->user_id]
+        if($busca) {
+            $userAgricultores = User::where([
+                ['name', 'like', '%'.$busca.'%', 'and', 'tipo', '==', 1]
             ])->get();
 
-            $aux++;
-        }
-        $aux = 0;
+            $agricultores = array();
+            $aux = 0;
 
-        $userAuth = auth()->user();
+            foreach ($userAgricultores as $agricultor) {
+                $agricultores[$aux] = Agricultor::where([
+                    ['user_id', '=', $agricultor->id]
+                ])->get();
+    
+                $aux++;
+            }
+
+            $aux = 0;
+            
+        }
+        else {
+            $agricultores = Agricultor::all();
+
+            $userAgricultores[] = new User();
+            $aux = 0;
+
+            foreach ($agricultores as $agricultor) {
+                $userAgricultores[$aux] = User::where([
+                    ['id', '=', $agricultor->user_id]
+                ])->get();
+
+                $aux++;
+            }
+            $aux = 0;
+        }
+        
         return view('listAgricultores', [
             'userAgricultores' => $userAgricultores,
             'aux' => $aux,
             'agricultores' => $agricultores,
             'user' => $userAuth,
+            'busca' => $busca,
         ]);
+
+        // else {
+
+        // }
+        
+        // $agricultores = Agricultor::all();
+
+        // $userAgricultores[] = new User();
+        // $aux = 0;
+
+        // foreach ($agricultores as $agricultor) {
+        //     $userAgricultores[$aux] = User::where([
+        //         ['id', '=', $agricultor->user_id]
+        //     ])->get();
+
+        //     $aux++;
+        // }
+        // $aux = 0;
+
+        
     }
 
     public function listProdutos() {
@@ -77,9 +120,7 @@ class AgricultorController extends Controller
 
         //$values = Produto::where('id', $produtos_id);
         // $values = Produto::all()->where('id', $produtos_id[0]);
-
-        
-        return view('agricultorListProdutos', ['produtos' => $produtosDoUsuario]);
+        return view('agricultorListProdutos', ['produtos' => $produtosDoUsuario, 'user' => $user]);
     }
 
     public function addProduto($id) {
@@ -93,6 +134,15 @@ class AgricultorController extends Controller
         $agricultor = auth()->user();
         $agricultor->produtos()->detach($id);
 
-        return redirect()->route('showAddProduto')->with('msg', 'Sucesso ao remover produto!');
+        return redirect()->route('listProdutos')->with('msg', 'Sucesso ao remover produto!');
+    }
+
+    public function dashboard() {
+        $user = auth()->user();
+
+        if(auth()->user()->tipo == 1) {
+            return view('dashboardAgricultor', compact('user'));
+        }
+        else { return redirect()->back(); }
     }
 }

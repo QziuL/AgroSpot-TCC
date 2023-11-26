@@ -20,6 +20,58 @@ body {
     transition: .4s;
 }
 
+#div-titulo{
+    padding: 15px;
+}
+
+#div-content {
+    padding: 10px;
+}
+
+#div-content a {
+    text-align: center;
+    width: 100px;
+    padding: 5px;
+    background-color: #43a75b;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    float: right;
+    transition: all .4s;
+}
+
+#div-content a:hover {
+    background-color:#bad8c0;
+    color: #43a75b;
+    font-weight: bold;
+}
+
+.link-redirect {
+    display: inline-block;
+    text-decoration: none;
+    color: #41814c;
+    margin-top: 20px;
+}
+
+.clear {
+    clear: both;
+}
+
+.div-options {
+    width: 60%;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(58, 56, 56, 0.692);
+    padding: 5px 5px 10px 5px;
+}
+
+.div-options h3 {
+    display: inline;
+    padding: 5px;
+}
+
 .div-produtos-card-bd {
     height: 230px;
     width: 200px;
