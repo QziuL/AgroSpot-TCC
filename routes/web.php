@@ -34,6 +34,8 @@ Route::post('/registerFeira', [FeiraController::class, 'store'])->name("storeFei
 
 Route::get('/dashboard', [IndexController::class, 'redirectDashboard'])->name('redirect.dashboard')->middleware('auth');
 Route::get('/dashboard/admin', [AdminController::class, 'show'])->name('admin.dashboard')->middleware('auth');
+Route::get('/dashboard/show/removerProduto', [AdminController::class, 'showRemoverProduto'])->name('show.removerProduto')->middleware('auth');
+Route::put('/dashboard/removerProduto/{id}', [AdminController::class, 'removerProduto'])->name('remover.produto')->middleware('auth');
 
 Route::get('/dashboard/agricultor', [AgricultorController::class, 'dashboard'])->name('agricultor.dashboard')->middleware('auth');
 Route::get('/dashboard/agricultor/addProduto', [AgricultorController::class, 'show'])->name('showAddProduto')->middleware('auth');
