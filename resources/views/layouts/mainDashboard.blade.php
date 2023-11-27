@@ -11,6 +11,11 @@
 </head>
 <body>
     <main>
+        <div id="div-flash-msg">
+            @if (session('msg'))
+                <p class="msg"> {{ session('msg') }} </p>
+            @endif
+        </div>
         @yield('content')
     </main>
 </body>
