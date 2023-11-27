@@ -11,6 +11,16 @@ body{
     background-attachment: fixed; 
 }
 
+.msg {
+    background-color: #D4EDDA;
+    color: #b5c588;
+    border: 1px solid #FFF;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+}
+
 #div-main {
     width: 100%;
     height: 100vh;
@@ -99,11 +109,101 @@ body{
 }
 
 
+/* == CSS DASHBOARD ADMIN == */
+#content-main-admin {
+    width: 100%;
+    height: 100vh;
+}
 
+#div-titulo {
+    width: 450px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.div-content {
+    width: 40%;
+    height: auto;
+    padding: 10px;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.table {
+    border-bottom: 1px solid #3d3d3d86;
+    padding: 10px;
+    font-size: 18px;
+    width: 100%;
+}
+
+.table .th-admin {
+    width: 90%;
+    text-align: start;
+}
+
+.table a {
+    color: #FFF;
+    text-decoration: none;
+    padding: 6px;
+    background-color: #4CAF50;
+    border-radius: 6px;
+    transition: all .4s;
+    margin-left: 20px;
+}
+
+.table a:hover {
+    background-color: #FFF;
+    color: #4CAF50;
+}
+
+
+.table-removerProduto {
+    width: 100%;
+    border-bottom: 1px solid #3d3d3d86;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.table-removerProduto thead th:nth-child(1) {
+    width: 10%;
+}
+
+.table-removerProduto thead th:nth-child(1) {
+    width: 40%;
+}
+
+.table-removerProduto thead th:nth-child(1) {
+    width: 10%;
+}
+
+.table-removerProduto thead th:nth-child(1) {
+    width: 10%;
+}
+
+.table-removerProduto tbody td {
+    text-align: center;
+    padding: 8px 0;
+}
+
+.table-removerProduto tbody td a {
+    color: #FFF;
+    text-decoration: none;
+    padding: 6px;
+    margin-left: 30px;
+    background-color: #4CAF50;
+    border-radius: 6px;
+    transition: all .4s;
+}
+
+.table-removerProduto a:hover {
+    background-color: #FFF;
+    color: #4CAF50;
+}
 
 
 /* CSS DASHBOARD INSERIR PRODUTO */
-
 #div-content-main {
     width: 100%;
     height: 100vh;
@@ -162,3 +262,5 @@ body{
     background-color: rgb(175, 194, 91);
     color: black;
 }
+
+
