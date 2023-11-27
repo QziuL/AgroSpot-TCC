@@ -22,6 +22,18 @@ body{
     background-color: lightgray 50%;
 }
 
+.msg {
+    background-color: #D4EDDA;
+    color: #000000;
+    /* border: 1px solid #FFF; */
+    width: 30%;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 10px;
+}
+
 /* == Rodapé da página == */
 
 footer{
@@ -300,6 +312,10 @@ footer{
 
 
 /* == CSS INDEX BLADE == */
+#div-main {
+    width: 100%;
+}
+
 #div-container-produtos {
     box-sizing: border-box;
     width: 78%;
@@ -353,7 +369,7 @@ footer{
     height: 180px;
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
-    margin: 0 0.9rem;   
+    margin: 0.9rem 0.9rem;   
     transition: all .3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.267);
 }
