@@ -8,26 +8,23 @@
             <h1>Painel - Admin</h1>
         </div>
         <div class="div-content">
-            <table class="table-register">
+            <table class="table">
                 <thead>
                     <tr>
-                        <th>Registrar</th>
+                        <th class="th-admin">Registrar</th>
                         <td><a href="{{ route('showProduto.cadastro') }}">Produtos</a></td>
                         <td><a href="{{ route('showFeira.cadastro') }}">Feiras</a></td>
                     </tr>
                 </thead>
             </table>
-            <table class="table-produtos">
+            <table class="table">
                 <thead>
                     <tr>
-                        <th>Produtos pendentes</th>
+                        <th class="th-admin">Remover</th>
+                        <td><a href="{{ route('show.removerProduto') }}">Produtos</a></td>
+                        {{-- <td><a href="{{ route('show.removerFeira') }}">Feiras</a></td> --}}
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><hr></td>
-                    </tr>
-                </tbody>
             </table>
         </div>
     </div>

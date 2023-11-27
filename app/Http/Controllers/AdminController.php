@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Produto;
 
 class AdminController extends Controller
 {
@@ -13,5 +14,18 @@ class AdminController extends Controller
             return view('dashboardAdmin');
         } else { return redirect()->back(); }
         
+    }
+
+    public function showRemoverProduto() {
+        $produtos = Produto::all();
+
+        return view('removerProdutoDashboard', compact('produtos'));
+    }
+
+    public function RemoverProduto(Request $request) {
+        Produto::findOrFail($request->id)->update(['disponibilidade' => 0]);
+
+        $produtos = Produto::all();
+        return redirect()->route('admin.dashboard');
     }
 }
